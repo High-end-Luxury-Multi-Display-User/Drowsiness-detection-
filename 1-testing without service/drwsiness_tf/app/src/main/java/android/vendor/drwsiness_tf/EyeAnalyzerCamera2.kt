@@ -1,23 +1,8 @@
 package android.vendor.drwsiness_tf
 
-import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.Color
-import android.media.Image
-import android.util.Log
-import org.opencv.android.OpenCVLoader
-import org.opencv.android.Utils
-import org.opencv.core.*
-import org.opencv.imgproc.Imgproc
-import org.opencv.objdetect.CascadeClassifier
-import org.tensorflow.lite.DataType
-import org.tensorflow.lite.Interpreter
-import org.tensorflow.lite.support.common.FileUtil
-import org.tensorflow.lite.support.common.ops.NormalizeOp
-import org.tensorflow.lite.support.image.ImageProcessor
-import org.tensorflow.lite.support.image.TensorImage
-import org.tensorflow.lite.support.image.ops.ResizeOp
-import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
+
+import sun.font.GlyphRenderData
+import java.awt.Color
 import java.io.File
 import java.io.FileOutputStream
 import java.util.ArrayDeque
@@ -120,7 +105,7 @@ class EyeAnalyzerCamera2(
                 val y = eye.y.coerceAtLeast(0)
                 val width = eye.width.coerceAtMost(bitmap.width - x)
                 val height = eye.height.coerceAtMost(bitmap.height - y)
-                val eyeBitmap = Bitmap.createBitmap(bitmap, x, y, width, height)
+                val eyeBitmap = GlyphRenderData.Bitmap.createBitmap(bitmap, x, y, width, height)
                 detectEyeState(eyeBitmap)
             }
 
